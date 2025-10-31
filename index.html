@@ -1,57 +1,34 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Songlist</title>
-  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: Arial, sans-serif;
-      padding: 20px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    table.dataTable thead th {
-      background-color: #222;
-      color: #fff;
-    }
-    table.dataTable {
-      border-collapse: collapse;
-      width: 100%;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Songs</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Song Requests</h1>
-  <table id="songs" class="display">
+  <header>
+    <h1>Songs</h1>
+    <input type="text" id="search" placeholder="Search song or artist...">
+  </header>
+
+  <div class="filters">
+    <div class="filter"><img src="icons/pop.png" alt="Pop"></div>
+    <div class="filter"><img src="icons/rock.png" alt="Rock"></div>
+    <div class="filter"><img src="icons/folk.png" alt="Folk"></div>
+    <div class="filter"><img src="icons/other.png" alt="Other"></div>
+  </div>
+
+  <table id="songsTable">
     <thead>
       <tr>
-        <th>#</th>
-        <th>Artist</th>
         <th>Title</th>
+        <th>Artist</th>
       </tr>
     </thead>
-    <tbody>
-      <!-- Здесь можно вставить свои строки -->
-      <tr><td>1</td><td>Imagine Dragons</td><td>Believer</td></tr>
-      <tr><td>2</td><td>Coldplay</td><td>Yellow</td></tr>
-      <tr><td>3</td><td>Linkin Park</td><td>Numb</td></tr>
-    </tbody>
+    <tbody id="songsBody"></tbody>
   </table>
 
-  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
-  <script>
-    new DataTable('#songs', {
-      paging: false,
-      info: false,
-      searching: true,
-      order: []
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
-
