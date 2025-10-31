@@ -2,10 +2,56 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>Проверка GitHub Pages</title>
+  <title>Songlist</title>
+  <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.dataTables.min.css">
+  <style>
+    body {
+      background-color: #111;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    table.dataTable thead th {
+      background-color: #222;
+      color: #fff;
+    }
+    table.dataTable {
+      border-collapse: collapse;
+      width: 100%;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; text-align: center; margin-top: 50px;">
-  <h1>Сайт работает!</h1>
-  <p>Это тестовая страница GitHub Pages.</p>
+<body>
+  <h1>Song Requests</h1>
+  <table id="songs" class="display">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Artist</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Здесь можно вставить свои строки -->
+      <tr><td>1</td><td>Imagine Dragons</td><td>Believer</td></tr>
+      <tr><td>2</td><td>Coldplay</td><td>Yellow</td></tr>
+      <tr><td>3</td><td>Linkin Park</td><td>Numb</td></tr>
+    </tbody>
+  </table>
+
+  <script src="https://cdn.datatables.net/2.0.8/js/dataTables.min.js"></script>
+  <script>
+    new DataTable('#songs', {
+      paging: false,
+      info: false,
+      searching: true,
+      order: []
+    });
+  </script>
 </body>
 </html>
+
